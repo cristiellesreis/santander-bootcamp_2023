@@ -1,0 +1,38 @@
+//interfaces (types x interface)
+
+type robot ={ //tipar um objeto
+    readonly id = number | string;
+    name: string;
+};
+
+interface robot2{ //estiver trabalhando com classes
+    readonly id = number | string;
+    name: string;
+    sayHello(): string;
+};
+
+const bot1: robot = {
+    id: "1",
+    name: "megaman",
+};
+
+const bot2: robot2 = {
+    id: "1",
+    name: "megaman",
+};
+
+class Pessoa implements robot{
+    id: string | number;
+    name: string;
+
+    constructor(id: string | number , name: string){
+        this.id = id
+        this.name = name
+    }
+    sayHello(): string{
+       return `Hello, i'm ${this.name}`;
+    }
+}
+
+const p = new Pessoa(1, "gustman");
+console.log(p.sayHello());
